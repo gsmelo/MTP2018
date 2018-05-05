@@ -1,62 +1,319 @@
-[Project]
-FileName=P3.c
-Name=MTP3
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=1
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=1
+#include <stdio.h>
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
 
-[Unit1]
-FileName=sophia.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
 
+int main ()
+{
+	int arg1, arg2;
+	int vet1[256], vet2[256], vet3[256];
+	int i=0, opc=0, resultado;
+	unsigned int contador = 2147483648;;
+do {
+	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
+	printf ("\n 1 - NOT");//1
+	printf ("\n 2 - AND"); //2
+	printf ("\n 3 - OR");//2
+	printf ("\n 4 - XOR"); //2
+	printf ("\n 5 - Right Shift");//1
+	printf ("\n 6 - Left Shift"); //1
+	printf ("\n\n Digite sua opcao: ");	
+	scanf ("%d", &opc);
+	switch(opc)
+	        {   case 1:
+	        	
+	        	printf("\nDigite o argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("NOT %i ( ", arg1);
+	        	for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						i++;
+					}
+					printf(" ) \n = ");
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+					{printf("%i", not vet1[i]);
+						i++;}	
+				break;
+			
+			case 2:	
+	        
+	        	printf("\nDigite o primeiro argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("\nDigite o segundo argumento: ");
+	        	scanf("%i", &arg2);
+	        	getchar();
+	        	printf("\n\n %d ( ", arg1);
+	        	contador = 2147483648;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						
+						i++;
+					}	printf(" ) ");
+				printf("\n AND ");
+				printf("\n %d ( ", arg2);
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg2){
+							vet2[i]=1;
+						}
+						else {
+							vet2[i]=0;
+						}
+						printf("%i", vet2[i]);
+						
+						i++;
+						
+					}
+					
+					
+				printf(" ) : ");
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+				{
+				vet3[i] = vet2[i] & vet1[i];
+				printf("%i", vet3[i]);
+				i++;
+				}
+				break;			
+				
+				case 3: 
+				
+				printf("\nDigite o primeiro argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("\nDigite o segundo argumento: ");
+	        	scanf("%i", &arg2);
+	        	getchar();
+	        	printf("\n\n %d ( ", arg1);
+	        	contador = 2147483648;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						
+						i++;
+					}	printf(" ) ");
+				printf("\n OR ");
+				printf("\n %d ( ", arg2);
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg2){
+							vet2[i]=1;
+						}
+						else {
+							vet2[i]=0;
+						}
+						printf("%i", vet2[i]);
+						
+						i++;
+						
+					}
+					
+					
+				printf(" ) : ");
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+				{
+				vet3[i] = vet2[i] or vet1[i];
+				printf("%i", vet3[i]);
+				i++;
+				}
+				
+				break;
+				
+				case 4: 
+				
+				printf("\nDigite o primeiro argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("\nDigite o segundo argumento: ");
+	        	scanf("%i", &arg2);
+	        	getchar();
+	        	printf("\n\n %d ( ", arg1);
+	        	contador = 2147483648;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						
+						i++;
+					}	printf(" ) ");
+				printf("\n OR ");
+				printf("\n %d ( ", arg2);
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg2){
+							vet2[i]=1;
+						}
+						else {
+							vet2[i]=0;
+						}
+						printf("%i", vet2[i]);
+						
+						i++;
+						
+					}
+					
+					
+				printf(" ) : ");
+				contador = 2147483648;
+				i=0;
+				for(contador; contador>0; contador>>= 1)
+				{
+				vet3[i] = vet2[i] xor vet1[i];
+				printf("%i", vet3[i]);
+				i++;
+				}
+				
+				break;
+				
+				case 5:
+				
+				printf("\nDigite o primeiro argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("\nDigite o segundo argumento: ");
+	        	scanf("%i", &arg2);
+	        	getchar();
+	        	printf("\n\n %d ( ", arg1);
+	        	resultado = arg1 >> arg2;
+	        	contador = 2147483648;
+	        	i=0;
+	        	for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						i++;
+					}printf(" ) ");
+					printf("\n >> ");
+				printf("\n %d ( ", arg2);
+				contador = 2147483648;
+	        	i=0;
+	        	for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg2){
+							vet2[i]=1;
+						}
+						else {
+							vet2[i]=0;
+						}
+						printf("%i", vet2[i]);
+						i++;
+					}
+				contador = 2147483648;
+				i=0;
+				printf(" ) : ");
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & resultado)
+						{
+							vet3[i]=1;
+						}
+						else {
+							vet3[i]=0;
+						}
+						printf("%i", vet3[i]);
+						i++;
+					}	
+				break;
+				
+				case 6: 
+					printf("\nDigite o primeiro argumento: ");
+	        	scanf("%i", &arg1);
+	        	getchar();
+	        	printf("\nDigite o segundo argumento: ");
+	        	scanf("%i", &arg2);
+	        	getchar();
+	        	printf("\n\n %d ( ", arg1);
+	        	resultado = arg1 << arg2;
+	        	contador = 2147483648;
+	        	i=0;
+	        	for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg1){
+							vet1[i]=1;
+						}
+						else {
+							vet1[i]=0;
+						}
+						printf("%i", vet1[i]);
+						i++;
+					}printf(" ) ");
+					printf("\n << ");
+				printf("\n %d ( ", arg2);
+				contador = 2147483648;
+	        	i=0;
+	        	for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & arg2){
+							vet2[i]=1;
+						}
+						else {
+							vet2[i]=0;
+						}
+						printf("%i", vet2[i]);
+						i++;
+					}
+				contador = 2147483648;
+				i=0;
+				printf(" ) : ");
+				for(contador; contador>0; contador>>= 1)
+					{
+						if (contador & resultado)
+						{
+							vet3[i]=1;
+						}
+						else {
+							vet3[i]=0;
+						}
+						printf("%i", vet3[i]);
+						i++;
+					}			
+				}
+				
+				
+				
+} 
+while(opc==0);
+return 0;
+}
