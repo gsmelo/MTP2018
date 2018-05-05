@@ -1,26 +1,30 @@
+// Giovana Saraiva de Melo
+// 11721EBI011
+
 #include <stdio.h>
 
-void funcao_converter_string_em_vetor(int v[], char w[])
+void converter(int v[], char s[])
 {
 	int i, num=0, n;
-	for(i=0; w[i] != '\0';i++)
+	for(i=0; s[i] != '\0';i++)
 	{
-		if(w[i] >= '0' && w[i] <= '9')
-		v[i] = w[i] - '0';
+		if(s[i] >= '0' && s[i] <= '9')
+		v[i] = s[i] - '0';
 	}
 	n=i;
 	for(i=0; i<n; i++)
-	{	if(w[i] >= '0' && w[i] <= '9')
+	{	if(s[i] >= '0' && s[i] <= '9')
 	num = num*10 + v[i];}
 	
 	printf("\nO numero eh: %d", num);
 	}
+
 int main()
 {
-	char w[256];
+	char s[256];
 	int v[256];
 	printf("Digite algo: ");
-	scanf("%s", w);
-	funcao_converter_string_em_vetor(v,w);
+	scanf("%s", s);
+	converter(v,s);
 	return 0;
 }
