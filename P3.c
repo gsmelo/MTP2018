@@ -34,10 +34,12 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				printf(" ) \n = ");
 				contador = 2147483648;
 				i=0;
+				printf("%d ( ", ~arg1);
 				for(contador; contador>0; contador>>= 1)
 					{printf("%i", not vet1[i]);
-						i++;}	
-				break;			
+						i++;}		printf(" ) ");
+				
+				break;
 			case 2:	
 	               	printf("\nDigite o primeiro argumento: ");
 	        	scanf("%i", &arg1);
@@ -76,12 +78,14 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				printf(" ) : ");
 				contador = 2147483648;
 				i=0;
+				printf("%d ( ", (arg1&arg2));
 				for(contador; contador>0; contador>>= 1)
 				{
 				vet3[i] = vet2[i] & vet1[i];
 				printf("%i", vet3[i]);
 				i++;
-				}
+				}printf(" ) ");
+				
 				break;			
 				case 3: 
 			printf("\nDigite o primeiro argumento: ");
@@ -121,12 +125,14 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				printf(" ) : ");
 				contador = 2147483648;
 				i=0;
+				printf ("%d ( ", arg1 | arg2);
 				for(contador; contador>0; contador>>= 1)
 				{
 				vet3[i] = vet2[i] or vet1[i];
 				printf("%i", vet3[i]);
 				i++;
-				}
+				}	printf(" ) ");
+			
 				break;
 				case 4: 
 			printf("\nDigite o primeiro argumento: ");
@@ -164,12 +170,14 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				printf(" ) : ");
 				contador = 2147483648;
 				i=0;
+				printf("%d ( ", arg1 ^ arg2);
 				for(contador; contador>0; contador>>= 1)
 				{
 				vet3[i] = vet2[i] xor vet1[i];
 				printf("%i", vet3[i]);
 				i++;
-				}
+				}printf(" ) ");
+				
 				break;
 				case 5:
 			printf("\nDigite o primeiro argumento: ");
@@ -207,6 +215,7 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				contador = 2147483648;
 				i=0;
 				printf(" ) : ");
+				printf("%d ( ", arg1 >> arg2);
 				for(contador; contador>0; contador>>= 1)
 					{if (contador & resultado)
 						{vet3[i]=1;
@@ -216,7 +225,7 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 						}
 						printf("%i", vet3[i]);
 						i++;
-					}	
+					}	printf(" ) ");
 		 		break;
 				case 6: 
 					printf("\nDigite o primeiro argumento: ");
@@ -254,6 +263,7 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 				contador = 2147483648;
 				i=0;
 				printf(" ) : ");
+				printf("%d ( ", arg1 << arg2);
 				for(contador; contador>0; contador>>= 1)
 					{if (contador & resultado)
 						{
@@ -263,7 +273,7 @@ do {	printf ("\n Bem vindo (a)! Escolha uma das opcoes a seguir: ");
 						}
 						printf("%i", vet3[i]);
 						i++;
-					}}} 
+					}printf(" ) ");}} 
 while(opc==0);
 return 0;
 }
