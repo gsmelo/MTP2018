@@ -1,3 +1,6 @@
+// Giovana Saraiva de Melo
+// 11721EBI011
+
 #include <stdio.h>
 
 int soma(int vet[20], int n);
