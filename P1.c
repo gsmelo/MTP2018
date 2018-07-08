@@ -8,7 +8,7 @@ int main()
 	char numbinario[256];
 	int estado = 0; int resto = 0; int i = 0;
 	printf("Digite o numero binario desejado: ");
-	scanf("%s", &numbinario);
+	scanf("%s", numbinario);
 	for (i=0; numbinario[i]!='\0'; i++)
 	{
 		if (numbinario[i] == '0' && estado == 0)
